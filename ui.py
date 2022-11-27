@@ -13,8 +13,8 @@ NKWind.geometry("928x522")
 NKWind.title("Naam Karan")
 NKWind.iconbitmap("NaamKaran.ico")
 
-# L1 = customtkinter.CTkLabel(NKWind, text ="Welcome to the Program")    # L1 - 1st Text
-# L1.pack()
+L1 = customtkinter.CTkLabel(NKWind, text ="Welcome to the Program")    # L1 - 1st Text
+L1.pack()
 
 F1 = customtkinter.CTkFrame(master=NKWind)
 F1.pack(pady=10, padx=60, fill="both", expand = True)
