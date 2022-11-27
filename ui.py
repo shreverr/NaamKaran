@@ -1,3 +1,4 @@
+
 import customtkinter
 
 import tkinter
@@ -13,5 +14,7 @@ NKWindow.title("Naam Karan")
 
 T1 = customtkinter.CTkLabel(NKWindow, text = "Welcome to the Program")    # T1 - 1st Text
 T1.pack()
+NKWindow.iconbitmap("NaamKaran.ico")
+
 
 NKWindow.mainloop()
