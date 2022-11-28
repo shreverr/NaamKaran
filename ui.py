@@ -35,7 +35,9 @@ NKWind.frame_right.grid(row=0, column=1, sticky="nswe", padx=10, pady=10)
 NKWind.frame_left = customtkinter.CTkFrame(master=NKWind, width=300, corner_radius=0)
 NKWind.frame_left.grid(row=0, column=0, sticky="nsw")
 
-NKWind.entry = customtkinter.CTkEntry(master=NKWind.frame_left,width=120,placeholder_text="Search for")
-NKWind.entry.grid(row=8, column=0, columnspan=2, pady=20, padx=20, sticky="we")
+NKWind.entry = customtkinter.CTkEntry(master=NKWind.frame_left,width=250,height=40,placeholder_text="Prefix")
+NKWind.entry.grid(row=0, column=0, columnspan=2, pady=20, padx=20, sticky="we")
+NKWind.entry = customtkinter.CTkEntry(master=NKWind.frame_left,width=250,height=40,placeholder_text="Suffix")
+NKWind.entry.grid(row=1, column=0, columnspan=2, pady=20, padx=20, sticky="we")
 
 NKWind.mainloop()
