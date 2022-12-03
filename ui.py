@@ -2,6 +2,7 @@
 import customtkinter
 
 from tkinter import *
+# from tkinter.ttk import *
 #============Main window named "NKWind"============
 
 customtkinter.set_appearance_mode("System")
@@ -74,18 +75,28 @@ NKWind.frame_right.Preview_Lbl.grid(row=0, column=1, padx=5, pady=5, sticky="nse
 
 scroll_bar = Scrollbar(NKWind.frame_right, orient=VERTICAL)
 
-
+#============ Scroll Bar Function ============
+def Multi_yview (*args):
+    Selected_Files_LB.yview(*args)
+    Preview_Files_LB.yview(*args)
 
 #============ selected and preview listboxes ============
 
-Preview_Files_LB = Listbox(master=NKWind.frame_right, bg="#2a2d2e",  yscrollcommand=scroll_bar.set)
-Preview_Files_LB.grid(row=1,column=0, padx=5, pady=3, sticky="nsew",rowspan=2)
+Selected_Files_LB = Listbox(master=NKWind.frame_right, bg="#2a2d2e", yscrollcommand=scroll_bar.set, fg=("#dce4ee"), font=("Helvetica", 10))
+Selected_Files_LB.grid(row=1,column=0, padx=5, pady=3,sticky="nsew", rowspan=2)
 
-Selected_Files_LB = Listbox(master=NKWind.frame_right, bg="#2a2d2e", yscrollcommand=scroll_bar.set)
-Selected_Files_LB.grid(row=1,column=1, padx=5, pady=3,sticky="nsew", rowspan=2)
+Preview_Files_LB = Listbox(master=NKWind.frame_right, bg="#2a2d2e",  yscrollcommand=scroll_bar.set, fg=("#dce4ee"), font=("Helvetica", 10))
+Preview_Files_LB.grid(row=1,column=1, padx=5, pady=3, sticky="nsew",rowspan=2)
+
+#============ List of listbox contents ============
+selected_list=["1"]
+for item in range(100):
+    Selected_Files_LB.insert(END, item)
+for item in range(100):
+    Preview_Files_LB.insert(END, item)
 
 #============ Scroll Bar Config ============
-scroll_bar.config(command=Preview_Files_LB.yview)
+scroll_bar.config(command=Multi_yview, troughcolor="#2a2d2e")
 scroll_bar.grid(row=1,column=3, padx=5, pady=3,sticky="ns")
 
 
