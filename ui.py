@@ -45,7 +45,7 @@ NKWind.Sort = customtkinter.CTkOptionMenu(master=NKWind.frame_left, values=["Sor
 NKWind.Sort.grid(row=2, column=0, pady=10, padx=20, sticky="w")
 
 #============Date and Time Drop Down============
-NKWind.Date_Time = customtkinter.CTkOptionMenu(master=NKWind.frame_left, values=["Date and Time", "DDMMYYYY", "YYYYMMDD", "YYYY", "YY", "MM","DD"])
+NKWind.Date_Time = customtkinter.CTkOptionMenu(master=NKWind.frame_left, values=["Date and Time", "DD/MMY/YYY", "YYYY/MM/DD", "YYYY", "YY", "MM","DD"])
 NKWind.Date_Time.grid(row=3, column=0, pady=10, padx=20, sticky="w")
 
 #============OK Button============
