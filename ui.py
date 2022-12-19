@@ -2,6 +2,7 @@
 import customtkinter
 
 from tkinter import *
+from tkinter.filedialog import askopenfilenames
 # from tkinter.ttk import *
 #============Main window named "NKWind"============
 
@@ -36,17 +37,35 @@ NKWind.frame_left.grid_rowconfigure(11, minsize=10)
 NKWind.entry = customtkinter.CTkEntry(master=NKWind.frame_left,width=250,height=40,placeholder_text="Prefix")
 NKWind.entry.grid(row=0, column=0, columnspan=2, pady=20, padx=20, sticky="we")
 
-#============Suffix Entry============
-NKWind.entry = customtkinter.CTkEntry(master=NKWind.frame_left,width=250,height=40,placeholder_text="Suffix")
-NKWind.entry.grid(row=1, column=0, columnspan=2, pady=20, padx=20, sticky="we")
+# #============Suffix Entry============
+# NKWind.entry = customtkinter.CTkEntry(master=NKWind.frame_left,width=250,height=40,placeholder_text="Suffix")
+# NKWind.entry.grid(row=1, column=0, columnspan=2, pady=20, padx=20, sticky="we")
+
+#============Sort By Drop Down============
+NKWind.iteration = customtkinter.CTkOptionMenu(master=NKWind.frame_left, values=["Numerical", "Alphabetical"])
+NKWind.iteration.grid(row=2, column=0, pady=10, padx=20, sticky="w")
+
 
 #============Sort By Drop Down============
 NKWind.Sort = customtkinter.CTkOptionMenu(master=NKWind.frame_left, values=["Sort By","Date Modified", "Ascending", "Descending"])
-NKWind.Sort.grid(row=2, column=0, pady=10, padx=20, sticky="w")
+NKWind.Sort.grid(row=3, column=0, pady=10, padx=20, sticky="w")
+
 
 #============Date and Time Drop Down============
 NKWind.Date_Time = customtkinter.CTkOptionMenu(master=NKWind.frame_left, values=["Date and Time", "DD/MMY/YYY", "YYYY/MM/DD", "YYYY", "YY", "MM","DD"])
-NKWind.Date_Time.grid(row=3, column=0, pady=10, padx=20, sticky="w")
+NKWind.Date_Time.grid(row=4, column=0, pady=10, padx=20, sticky="w")
+
+
+#============Browse Button============
+file_dirs = tuple()
+def open_file():
+   file = askopenfilenames()
+   file_dirs=file
+
+
+NKWind.ok_btn = customtkinter.CTkButton(master=NKWind.frame_left, text="Browse...", width=120, command=open_file)
+NKWind.ok_btn.grid( row=11, column=0, pady=10, padx=20, sticky="w")
+
 
 #============OK Button============
 NKWind.ok_btn = customtkinter.CTkButton(master=NKWind.frame_left, text="Ok", width=120)
